@@ -15,13 +15,15 @@
 	width: 60px;
 }
 
-#hello {
-	padding-top: 10%;
+#quickLinks {
+	padding-top: 7%;
+	border: solid;
 }
 
 #search {
 	width: 80%;
 }
+
 input {
 	height: 20%;
 	width: 80%;
