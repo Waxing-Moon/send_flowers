@@ -1,0 +1,28 @@
+
+
+.container {
+	width: 100%;
+}
+
+.navbar-custom {
+    background-color: #FF4500;
+    border-color: #FFFFFF;
+    background-image: none;
+}
+
+#logo {
+	height: 40px;
+	width: 60px;
+}
+
+#hello {
+	padding-top: 10%;
+}
+
+#search {
+	width: 80%;
+}
+input {
+	height: 20%;
+	width: 80%;
+}
