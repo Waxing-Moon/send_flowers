@@ -11,6 +11,7 @@ mongoose.connect("mongodb://localhost/myapp");
 var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
+    seller: String,
     salt: String,
     hash: String
 });
@@ -84,9 +85,16 @@ function userExist(req, res, next) {
 app.get("/", function (req, res) {
 
     if (req.session.user) {
-	res.render('after',{   
-           value: req.session.user.username
-        });
+	if (req.session.user.seller == 'YES') {
+	    res.render('afterSeller',{   
+		value: req.session.user.username
+            });
+	}
+	else {
+	    res.render('after',{   
+		value: req.session.user.username
+            });
+	}
     } else {
         res.render("index");
     }
@@ -103,11 +111,13 @@ app.get("/signup", function (req, res) {
 app.post("/signup", userExist, function (req, res) {
     var password = req.body.password;
     var username = req.body.username;
+    var seller = req.body.seller;
 
     hash(password, function (err, salt, hash) {
         if (err) throw err;
         var user = new User({
             username: username,
+	    seller: seller,
             salt: salt,
             hash: hash,
         }).save(function (err, newUser) {
