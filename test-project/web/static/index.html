@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="css/style.css"/>
   
 </head>
-<body  ng-app="myApp" >
+<body  ng-app="myApp" ng-init="signin=true">
 
-    <nav class="navbar navbar-inverse navbar-fixed-top text-center">
+    <nav class="navbar navbar-default navbar-fixed-top text-center">
         
         <div class="container-fluid">
             
@@ -52,7 +52,7 @@
 
                     <li><a href="#">Home</a></li>
 
-                    <li><a href="#portfolio">Collection</a></li>
+                    
                    
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
@@ -76,25 +76,22 @@
 
                     </li>
 
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#" ng-show="signin">Sign In/Sign Up</a></li>
+                    <li><a href="#" ng-show="logout">Log Out</a></li>
                 </ul>
 
             </div>
         </div>
     </nav>
-
-		<br>
- <br>
-<br>
  
 	
    <div id="portfolio" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="page-title text-center">
-                    <h1 style="font-family:Mistral;font-size: 40px;color: rgb(98, 155, 150);" >Our Collection</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua. </p>
+                    <h1 class="coll" >Our Collection</h1>
+                    <p class="text">Flowers always make people better, happier, and more helpful; they are sunshine, food and medicine for the soul.
+                    </p>
                     <hr class="pg-titl-bdr-btm"></hr>
                 </div>
                 <div class="port-sec" >
@@ -122,8 +119,6 @@
 
                            <hr class="pg-titl-bdr-btm"></hr>
                      </div>
-                    
-                    
                 </div>
             </div>
         </div>
@@ -131,7 +126,7 @@
     <div class="ng-view">
         
     </div>
-
+    
 
 
 <footer class="navbar-fixed-bottom text-center">© 2016-2017, Flower.com, Inc. or its affiliate</footer>
