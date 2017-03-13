@@ -11,7 +11,7 @@
 }
 
 #guestmain{
-	background-image: url("img/car7.jpg");
+	background-color: rgb(255,250,240,1 );
 }
 
 #main_page{
@@ -22,16 +22,16 @@
 
 .text-style{
 	font-weight: bold;
-	color: rgb(215,100,100);
+	color: rgb(120,139,196);
 	font-family: monospace;
-	background-color: black;
+	background-color: rgb(255,250,240,0.5 );
 }
 
 
 .heading{
 	font-weight: bold;
-	color: rgb(215,140,100);
-	background-color: black;
+	background-color: rgb(255,250,240,0.5);
+	color: rgb(120,139,196);
 	font-family: monospace;
 }
 

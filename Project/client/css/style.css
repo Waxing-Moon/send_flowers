@@ -1,6 +1,5 @@
 #heading{
     font-family: monospace;
-    sbackground-color: rgb(255,250,240,0.7 );
     padding: 20px;
     font-weight: bold;
     color: rgb(119,136,153);
@@ -8,7 +7,7 @@
 }
 
 #sell2main{
-    background-image: url("img/car7.jpg");
+    background-color: rgb(255,250,240,1 );
 }
 
 .sell2{
@@ -71,7 +70,6 @@ footer{
      font-weight: bold;
     color: rgb(215,100,100);
     font-family: monospace;
-    background-color: black;
 
 };
 
