@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flower.com</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+
+<!--     <script type="text/javascript" src="./js/slide.js"></script> -->
+  <link rel="stylesheet" href="css/style.css"/>
+  
+</head>
+<body  ng-app="myApp" ng-init="signin=true">
+
+    <nav class="navbar navbar-default navbar-fixed-top text-center">
+        
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                
+                </button>
+              
+                <a class="navbar-brand" href="#">Flower.com</a>
+            
+            </div>
+            
+	    	<div class="col-sm-6 ">
+            
+                <form>
+                    
+                    <input type="text" id="search_bar" placeholder="Enter Flower Name">
+                    <button id="search_btn" type="submit" class="btn btn-default">Submit</button>
+                
+                </form>
+
+            </div>
+
+	    
+ 			<div class="collapse navbar-collapse" id="myNavbar">
+                <ul  class="nav navbar-nav">
+
+                    <li><a href="#">Home</a></li>
+                     <li><a href="/client/index.html" target="_self">Seller</a></li>
+                    
+                   
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services</a>
+                      
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Fullfillment</a></li>
+                            <li><a href="#">Pay with Us</a></li>
+                            <li><a href="#">Global Selling</a></li>
+                        </ul>
+                
+                    </li>
+
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Us</a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">Seller Support</a></li>
+                            <li><a href="#">Call Us</a></li>
+                            
+                        </ul>
+
+                    </li>
+
+                    <li><a href="/views/index1.html" ng-show="signin" target="_self">Sign In/Sign Up</a></li>
+                    
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+<br><br><br><br><br>
+	
+   <div id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="page-title text-center">
+                    <h1 class="coll" >Our Collection</h1>
+                    <p class="text">Flowers always make people better, happier, and more helpful; they are sunshine, food and medicine for the soul.
+                    </p>
+                    <hr class="pg-titl-bdr-btm"></hr>
+                </div>
+                <div class="port-sec" >
+                    <div  class="col-md-6 fil-btn text-center">
+                           <div class="dropdown">
+                                  <button class="dropbtn">Flowers</button>
+                                   <div class="dropdown-content">
+                                     <a class="link" href="#sum">Summer Flowers</a>
+                                     <a class="link" href="#win">Winter Flower</a>
+                                     <a class="link" href="#sp">Spring Flowers</a>
+                                    </div>
+                             </div>
+
+                           <hr class="pg-titl-bdr-btm"></hr>
+                     </div>
+                    <div  class="col-md-6 fil-btn text-center">
+                           <div class="dropdown">
+                                  <button class="dropbtn">Decoration Ideas</button>
+                                   <div class="dropdown-content">
+                                     <a class="link" href="#wed">Wedding Decor</a>
+                                     <a class="link" href="#bir">Birthday Decor </a>
+                                     <a class="link" href="#car">Car Decor</a>
+                                    </div>
+                             </div>
+
+                           <hr class="pg-titl-bdr-btm"></hr>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ng-view">
+        
+    </div>
+    
+
+
+<footer class="navbar-fixed-bottom text-center">© 2016-2017, Flower.com, Inc. or its affiliate</footer>
+
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1"></script>
+ 
+    
+    
+
+    </body>
+
+</html>
