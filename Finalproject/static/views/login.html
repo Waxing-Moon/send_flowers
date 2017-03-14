@@ -24,13 +24,7 @@
     button:hover {
     opacity: 0.8;
     }
-    img.avatar {
-    width: 40%;
-    border-radius: 50%;
-    }
-    .container {
-    padding: 16px;
-    }
+    
     span.psw {
     float: right;
     padding-top: 16px;
@@ -51,18 +45,18 @@
     }
   </style>
   <body>
+    <div class="container">
     <h2>Login</h2>
-    <form id="login" method="post" action="/login">
+    <form id="login">
     <br><br><br><br><br>
     
       <div class="container">
-        <label class="lab"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required="">
+        <label class="lab "><b>Username</b></label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
         <label class="lab"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required="">
+        <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
         <button type="submit" value="Log In">Login</button>
       </div>
     </form>
-    <h1></h1>
   </body>
 </html>
