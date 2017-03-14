@@ -5,10 +5,10 @@ app.config(function($routeProvider) {
     .when("/", {
         templateUrl : "guest_index.html"
     })
-    .when("/signup", {
-        templateUrl : "flowers.html"
+    .when("/signin", {
+        templateUrl : "login.html"
     })
-    .when("/signup2", {
-        templateUrl : "flowers.html"
+    .when("/signup", {
+        templateUrl : "signup.html"
     });
 });
