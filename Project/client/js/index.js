@@ -1,6 +1,15 @@
 var app = angular.module("angApp", ["ui.router"]);
 
 
+var app2 = angular.module("myApp", ["ngRoute"]);
+app2.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main_index.html"
+    })
+
+});
+
 app.controller("mainController", function(){
   // this.tab = 1;
   this.selectTab = function(selectedTab){
@@ -150,4 +159,6 @@ app1.controller("updateOrderController", function($http){
       this.orders={};
   }
 });
+
+
 
