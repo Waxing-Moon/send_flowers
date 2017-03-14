@@ -43,7 +43,6 @@ module.exports.getSellerById = function(id , callback){
 }
 
 module.exports.addSeller = function(seller, callback){
-	//Seller.file.data =  fs.readFileSync(Seller.file.data);
 	Seller.create(seller, callback);
 }
 

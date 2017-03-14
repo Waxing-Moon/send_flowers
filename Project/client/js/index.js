@@ -112,17 +112,17 @@ app1.config(function($stateProvider, $urlRouterProvider){
 
 app1.controller("getOrdersController", function($http){
 
-  var flowers=this;
+  var content=this;
   $http.get('http://localhost:8080/orders').then(function successCallback(response) {
         console.log("Inside success callback before assigning");
-        flowers.orders = response.data;
+        content.orders = response.data;
     }, function errorCallback(data) {
         console.log("Inside error Get Order callback");
     }
     );
 });
 
-app.controller("addOrdersController", function($http){
+app1.controller("addOrderController", function($http){
   this.orders = {};
  // student.file =  = fs.readFileSync(student.file);
   this.submitUserDetails = function() {

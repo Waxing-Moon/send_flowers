@@ -4,21 +4,21 @@
     <div class="form-group" style="margin-top: 15px;">
       <label for="name" class="col-sm-2 control-label">Product Name</label>
       <div class="col-sm-10">
-          <input type="text" class="form-control" id="name" placeholder="Name" ng-model="addOdrCtlr.student.name" required>
+          <input type="text" class="form-control" placeholder="Name" ng-model="addOdrCtlr.orders.name" required>
       </div>
     </div>
 
     <div class="form-group">
       <label for="price" class="col-sm-2 control-label">Price</label>
       <div class="col-sm-10">
-          <input type="number" class="form-control" id="price" placeholder="Price" ng-model="addOdrCtlr.student.price" required>
+          <input type="number" class="form-control" placeholder="Price" ng-model="addOdrCtlr.orders.price" required>
       </div>
     </div>
 
-    <div class="form-group" style="margin-top: 15px;">
+    <div class="form-group">
       <label for="Address" class="col-sm-2 control-label">Address</label>
       <div class="col-sm-10">
-          <input type="text" class="form-control" id="Address" placeholder="Enter Address" ng-model="addOdrCtlr.student.address" required>
+          <input type="text" class="form-control" placeholder="Enter Address" ng-model="addOdrCtlr.orders.address" required>
       </div>
     </div>
 
@@ -26,14 +26,14 @@
     <div class="form-group">
       <label for="status" class="col-sm-2 control-label">Status</label>
       <div class="col-sm-10" >
-          <input type="radio" id="Accepted" ng-checked="true" ng-model="addOdrCtlr.student.stock" value="Accepted"><span class="myRadioOption">Accepted</span>
-          <input type="radio" id="Rejected" ng-model="addOdrCtlr.student.stock" value="Rejected"><span class="myRadioOption">Rejected</span>
-          <input type="radio" id="Transist" ng-model="addOdrCtlr.student.stock" value="In Transist"><span class="myRadioOption">In Transist</span>
-          <input type="radio" id="Delivered" ng-model="addOdrCtlr.student.stock" value="Delivered"><span class="myRadioOption">Delivered</span>
+          <input type="radio" id="Accepted" ng-checked="true" ng-model="addOdrCtlr.orders.status" value="Accepted"><span class="myRadioOption">Accepted</span>
+          <input type="radio" id="Rejected" ng-model="addOdrCtlr.orders.status" value="Rejected"><span class="myRadioOption">Rejected</span>
+          <input type="radio" id="Transist" ng-model="addOdrCtlr.orders.status" value="In Transist"><span class="myRadioOption">In Transist</span>
+          <input type="radio" id="Delivered" ng-model="addOdrCtlr.orders.status" value="Delivered"><span class="myRadioOption">Delivered</span>
       </div>
     </div>
        
-    </div>
+   
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>
@@ -41,4 +41,4 @@
     </div>
 
   </form>
-<div>
+</div>

@@ -5,8 +5,7 @@ var OrderSchema = mongoose.Schema({
 		type:String
 	},
 	name:{
-		type:String,
-		required:true
+		type:String
 	},
 	price:{
 		type:Number
@@ -14,7 +13,7 @@ var OrderSchema = mongoose.Schema({
 	address:{
 		type:String
 	},
-	staus:{
+	status:{
 		type:String,
 		default:"Accepted"
 	}
@@ -22,7 +21,7 @@ var OrderSchema = mongoose.Schema({
 
 
 
-var Order = module.exports = mongoose.model('orders', OrderSchema, 'placed');
+var Order = module.exports = mongoose.model('placedOrders', OrderSchema, 'Orderdb');
 
 
 module.exports.getOrder = function(callback, limit){
@@ -33,17 +32,15 @@ module.exports.getOrderById = function(id , callback){
 	Order.findById(id, callback);
 }
 
-module.exports.addOrder = function(Order, callback){
-	Order.create(Order, callback);
+module.exports.addOrder = function(data, callback){
+	Order.create(data, callback);
 }
 
-module.exports.updateOrder = function(id, Order, callback){
+module.exports.updateOrder = function(id, order, callback){
 	var query = {_id: id};
 	var update = {
-		name: Order.name,
-		price: Order.price,
-		file: Order.file,
-		stock: Order.stock
+		name:order.name,
+		status: order.status
 	};
 	Order.findOneAndUpdate(query, update, callback);
 	
