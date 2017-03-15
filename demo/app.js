@@ -9,7 +9,10 @@ var I_name='rose';
 var I_price='15';
 // connect to mongo
 mongoose.connect('localhost', 'demo');
-
+var app=express();
+var bodyparser=require('body-parser');
+app.use(express.static(__dirname + '/static'));
+var server2=app.listen('9090',()=>{console.log('index server up');});
 // example schema
 var schema = new Schema({
     img: { data: Buffer, contentType: String },
@@ -43,7 +46,7 @@ mongoose.connection.on('open', function () {
 
       // start a demo server
       var server = express.createServer();
-      server.get('/img', function (req, res, next) {
+      app.get('/img', function (req, res, next) {
         A.findById(a, function (err, doc) {
           if (err) return next(err);
          res.contentType(doc.img.contentType);
@@ -53,7 +56,7 @@ mongoose.connection.on('open', function () {
          //res.send(doc.name);
         });
       });
-      server.get('/name', function (req, res, next) {
+      app.get('/name', function (req, res, next) {
         A.findById(a, function (err, doc) {
           if (err) return next(err);
           console.log("before send")

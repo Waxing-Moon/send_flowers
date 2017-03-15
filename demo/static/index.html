@@ -9,20 +9,20 @@ mp.controller("d",($scope,$http)=>{
 
 			console.log("cont up ");
 			//$scope.price="132";	
-	$http.get("http://localhost:3333/name").then((res)=>{
+	$http.get("http://localhost:9090/name").then((res)=>{
 		console.log("got it");
-		console.log(res);
-		//$scope.name=res.data[0].name;
-		//$scope.price=res.data[0].price;
+		console.log(res.data);
+		$scope.name=res.data.name;
+		$scope.price=res.data.price;
 	},(err,res)=>{console.log(err);});
 });
 </script>
 <body ng-app="imgapp" ng-controller="d">
-<img src="http://localhost:3333/img">
-<!-- <h2 ng-bind="name"></h2> 
+<img src="http://localhost:9090/img">
+<h3 ng-bind="name"></h3> 
 
--->
-<h3 >{{name}}</h3>
+
+<h3 >{{price}}</h3>
 </body>
 
 </html>
