@@ -5,7 +5,7 @@ var config = require('./config.json');
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + "/client"));
+app.use(express.static(__dirname));
 
 
 var mongoose = require('mongoose');
