@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Checkout Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body{ margin-top:20px; }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading">Step 1</h4>
+                    <p class="list-group-item-text">Personal Details</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">Step 2</h4>
+                    <p class="list-group-item-text">Confirm Purchase</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">Step 3</h4>
+                    <p class="list-group-item-text">Make Payment</p>
+                </a></li>
+            </ul>
+        </div>
+	</div>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                
+                <form>
+    				<div class="form-group">
+      					<label for="name">Name</label>
+    			  		<input type="text" class="form-control" id="name" placeholder="Enter your name">
+    				</div>
+    				<div class="form-group">
+   			    		<label for="number">Phone Number:</label>
+    			  		<input type="tel" class="form-control" id="number" placeholder="Enter your phone number">
+    				</div>
+    				<div class="form-group">
+   			    		<label for="add">Address</label>
+    			  		<input type="text" class="form-control" id="add" placeholder="Enter your Address">
+    				</div>
+    				<div class="form-group">
+   			    		<label for="number">Pin Code</label>
+    			  		<input type="number" class="form-control" id="pin" placeholder="Enter your Pincode">
+    				</div>
+    				<button id="activate-step-2" class="btn btn-primary btn-lg">Submit</button>
+  				</form>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                <h1 class="text-center"> STEP 2</h1>
+                <button id="activate-step-3" class="btn btn-primary btn-lg">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+		            <div class="panel panel-default">
+		                <div class="panel-heading">
+		                    <h3 class="panel-title">
+		                        Payment Details
+		                    </h3>
+		                </div>
+		                <div class="panel-body">
+		                    <form role="form">
+		                    <div class="form-group">
+		                        <label for="cardNumber">
+		                            CARD NUMBER</label>
+		                        <div class="input-group">
+		                            <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+		                                required autofocus />
+		                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-xs-7 col-md-7">
+		                            <div class="form-group">
+		                                <label for="expityMonth">
+		                                    EXPIRY DATE</label>
+		                                    <br>
+		                                <div class="col-xs-6 col-lg-6 pl-ziro">
+		                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+		                                </div>
+		                                <div class="col-xs-6 col-lg-6 pl-ziro">
+		                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+		                            </div>
+		                        </div>
+		                        <div class="col-xs-5 col-md-5 pull-right">
+		                            <div class="form-group">
+		                                <label for="cvCode">
+		                                    CV CODE</label>
+		                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+		                            </div>
+		                        </div>
+		                    </div>
+		                    </form>
+		                </div>
+		            </div>
+		            <br/>
+		            <a href="#" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    var navListItems = $('ul.setup-panel li a'),
+        allWells = $('.setup-content');
+
+    allWells.hide();
+
+    navListItems.click(function(e)
+    {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+            $item = $(this).closest('li');
+        
+        if (!$item.hasClass('disabled')) {
+            navListItems.closest('li').removeClass('active');
+            $item.addClass('active');
+            allWells.hide();
+            $target.show();
+        }
+    });
+    $('ul.setup-panel li.active a').trigger('click');
+    $('#activate-step-2').on('click', function(e) {
+        $('ul.setup-panel li:eq(1)').removeClass('disabled');
+        $('ul.setup-panel li a[href="#step-2"]').trigger('click');
+        $(this).remove();
+    })   
+    $('#activate-step-3').on('click', function(e) {
+        $('ul.setup-panel li:eq(2)').removeClass('disabled');
+        $('ul.setup-panel li a[href="#step-3"]').trigger('click');
+        $(this).remove();
+    })    
+});
+
+</script>
+</body>
+</html>
